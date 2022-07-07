@@ -9,10 +9,23 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsBrandGen {
+  const $AssetsBrandGen();
+
+  /// File path: assets/brand/icon.png
+  AssetGenImage get icon => const AssetGenImage('assets/brand/icon.png');
+
+  /// File path: assets/brand/icon_background.png
+  AssetGenImage get iconBackground =>
+      const AssetGenImage('assets/brand/icon_background.png');
+
+  /// File path: assets/brand/icon_single-01.png
+  AssetGenImage get iconSingle01 =>
+      const AssetGenImage('assets/brand/icon_single-01.png');
+}
+
 class $AssetsIconsGen {
   const $AssetsIconsGen();
-
-  $AssetsIconsBrandGen get brand => const $AssetsIconsBrandGen();
 
   /// File path: assets/icons/broken_wire.png
   AssetGenImage get brokenWire =>
@@ -33,24 +46,10 @@ class $AssetsIconsGen {
   AssetGenImage get user => const AssetGenImage('assets/icons/user.png');
 }
 
-class $AssetsIconsBrandGen {
-  const $AssetsIconsBrandGen();
-
-  /// File path: assets/icons/brand/icon.png
-  AssetGenImage get icon => const AssetGenImage('assets/icons/brand/icon.png');
-
-  /// File path: assets/icons/brand/icon_background.png
-  AssetGenImage get iconBackground =>
-      const AssetGenImage('assets/icons/brand/icon_background.png');
-
-  /// File path: assets/icons/brand/icon_single-01.png
-  AssetGenImage get iconSingle01 =>
-      const AssetGenImage('assets/icons/brand/icon_single-01.png');
-}
-
 class Assets {
   Assets._();
 
+  static const $AssetsBrandGen brand = $AssetsBrandGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
 }
 

@@ -13,7 +13,7 @@ class _AppSplashFragment extends StatelessWidget {
       body: Center(
         child: ImageIcon2(
           AssetImage(
-            Assets.icons.brand.icon.path,
+            Assets.brand.icon.path,
           ),
           ignoreIconColor: true,
           size: 250,

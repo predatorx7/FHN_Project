@@ -66,6 +66,9 @@ abstract class SingleServiceRepository<SERVICE> extends HttpClientProvider {
   });
 
   @protected
+  SERVICE get service => getService();
+
+  @protected
   SERVICE getService() {
     if (_cachedService == null) {
       final dio = getHttpClient();

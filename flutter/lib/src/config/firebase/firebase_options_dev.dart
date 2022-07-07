@@ -50,23 +50,21 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBWkJhUS0D-FmMP7U4XTG0EWSgQjUe5JtM',
-    appId: '1:715055681361:android:31959a270de9ea6cc40d70',
-    messagingSenderId: '715055681361',
-    projectId: 'wanasatime-91ac5',
-    storageBucket: 'wanasatime-91ac5.appspot.com',
+    apiKey: 'AIzaSyBtmZRvvXLp2WIAaJeDwdwwd2Ci6dc4NqE',
+    appId: '1:809528135523:android:fbce4a4c4f58bb46f38d56',
+    messagingSenderId: '809528135523',
+    projectId: 'com-magnificsoftware-shopping',
+    storageBucket: 'com-magnificsoftware-shopping.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCxdwG9dvjJrYhX747ipB6gV8ascUhRJ_0',
-    appId: '1:715055681361:ios:0800a72454796232c40d70',
-    messagingSenderId: '715055681361',
-    projectId: 'wanasatime-91ac5',
-    storageBucket: 'wanasatime-91ac5.appspot.com',
-    androidClientId:
-        '715055681361-2abcac1alea5bb63dqieinf0v1rpo1fm.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDFZWui--YjLD37c3QmB52hcer7_NU-Ces',
+    appId: '1:809528135523:ios:f863b5057e663ec9f38d56',
+    messagingSenderId: '809528135523',
+    projectId: 'com-magnificsoftware-shopping',
+    storageBucket: 'com-magnificsoftware-shopping.appspot.com',
     iosClientId:
-        '715055681361-7usrb8o0kkiq51i6c4f3a83lsdc1vodq.apps.googleusercontent.com',
+        '809528135523-2idlao294u9djv1pdee6mvcdihc1p23b.apps.googleusercontent.com',
     iosBundleId: 'com.magnificsoftware.shopping.dev',
   );
 }

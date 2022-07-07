@@ -12,6 +12,7 @@
 outdated.deps
 responses/
 untranslated.txt
+cache/
 
 # IntelliJ related
 *.iml

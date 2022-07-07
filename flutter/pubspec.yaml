@@ -1,7 +1,7 @@
 name: shopping
 description: A shopping experience.
 
-version: 0.1.0+22060012
+version: 0.1.0+22070008
 publish_to: none
 
 environment:
@@ -75,6 +75,7 @@ dependencies:
   crypto: ^3.0.2
   system_info2: ^2.0.4
   fluentui_system_icons: ^1.1.174
+  badges: ^2.0.3
 
 dev_dependencies:
   flutter_test:
@@ -93,5 +94,5 @@ flutter:
   generate: true
   assets:
     - assets/icons/
-    - assets/icons/brand
+    - assets/brand/
 

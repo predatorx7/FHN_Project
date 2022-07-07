@@ -1,4 +1,4 @@
-# mytiketi
+# FHN Assignment Project
 
 A new Flutter application.
 

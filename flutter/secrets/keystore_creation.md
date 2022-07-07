@@ -1,4 +1,4 @@
-`keytool -genkey -v -keystore ~/vr-films-production-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias vr-films-production;`
+`keytool -genkey -v -keystore ./example-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias example-keystore;`
 
 Enter keystore password: `password`  
 Re-enter new password: `password`

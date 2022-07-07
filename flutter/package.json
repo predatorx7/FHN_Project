@@ -1,0 +1,23 @@
+{
+  "name": "shopping",
+  "version": "0.1.0",
+  "description": "Simple NodeJs script of shortcut commands for this code",
+  "scripts": {
+    "lint": "flutter analyze",
+    "clean": "flutter clean",
+    "up": "flutter pub get",
+    "fmt": "flutter format .",
+    "generate": "yarn run up && flutter pub run build_runner build --delete-conflicting-outputs;",
+    "generate:new": "yarn run up && flutter pub run build_runner build;",
+    "generate:serializable": "dart run scripts/serializable.dart > build/class.dart",
+    "dev": "flutter run --flavor development lib/main_devel.dart",
+    "dev:win": "flutter run lib/main_devel.dart",
+    "build:android": "flutter build apk --flavor production --split-per-abi",
+    "build:ios": "flutter build ipa --flavor production",
+    "build:stg:android": "flutter build apk --flavor staging --split-per-abi",
+    "build:stg:ios": "flutter build ipa --flavor staging",
+    "install:app": "flutter install"
+  },
+  "author": "mushaheed.syed@brij.tech",
+  "license": "UNLICENSED"
+}

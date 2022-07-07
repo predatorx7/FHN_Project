@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "809528135523",
+    "project_id": "com-magnificsoftware-shopping",
+    "storage_bucket": "com-magnificsoftware-shopping.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809528135523:android:7867eee9cf069860f38d56",
+        "android_client_info": {
+          "package_name": "com.magnificsoftware.shopping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809528135523-8i4pe7cd2min3h2oag786j28d3ptgu74.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtmZRvvXLp2WIAaJeDwdwwd2Ci6dc4NqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "809528135523-8i4pe7cd2min3h2oag786j28d3ptgu74.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "809528135523-2idlao294u9djv1pdee6mvcdihc1p23b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.magnificsoftware.shopping.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809528135523:android:fbce4a4c4f58bb46f38d56",
+        "android_client_info": {
+          "package_name": "com.magnificsoftware.shopping.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809528135523-8i4pe7cd2min3h2oag786j28d3ptgu74.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtmZRvvXLp2WIAaJeDwdwwd2Ci6dc4NqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "809528135523-8i4pe7cd2min3h2oag786j28d3ptgu74.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "809528135523-2idlao294u9djv1pdee6mvcdihc1p23b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.magnificsoftware.shopping.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809528135523:android:e190300ffe903b6bf38d56",
+        "android_client_info": {
+          "package_name": "com.magnificsoftware.shopping.stg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809528135523-8i4pe7cd2min3h2oag786j28d3ptgu74.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtmZRvvXLp2WIAaJeDwdwwd2Ci6dc4NqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "809528135523-8i4pe7cd2min3h2oag786j28d3ptgu74.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "809528135523-2idlao294u9djv1pdee6mvcdihc1p23b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.magnificsoftware.shopping.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
