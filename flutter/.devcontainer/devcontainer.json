@@ -1,0 +1,58 @@
+{
+    "name": "flutterv2-vscode-devcontainer",
+    "context": "..",
+    "dockerFile": "./Dockerfile",
+    "remoteUser": "developer",
+    "mounts": [
+      // Used for detecting debug devices over usb from adb.
+      // Only works on linux. Use wireless on MacOS or Windows.
+      "source=/dev/bus/usb,target=/dev/bus/usb,type=bind"
+    ],
+    "settings": {
+      "terminal.integrated.profiles.linux":{
+        "bash": {
+          "path": "/usr/bin/bash",
+          "icon": "terminal-bash"
+        },
+        "zsh": {
+          "path": "/usr/bin/zsh"
+        }
+        // "fish": {
+        //   "path": "/usr/bin/fish"
+        // },
+        // "tmux": {
+        //   "path": "/usr/bin/tmux",
+        //   "icon": "terminal-tmux"
+        // },
+        // "pwsh": {
+        //   "path": "/usr/bin/pwsh",
+        //   "icon": "terminal-powershell"
+        // }
+      },
+      "terminal.integrated.defaultProfile.linux": "zsh"
+    },
+    "runArgs": [
+      // Please note that this container is set to run in privileged mode in order to access USB devices on the host machine. 
+      // You should be aware of the security implications of this.
+      "--privileged"
+    ],
+    "build": {
+      "args": {
+        // Example args
+        // "PROJECT_PATH": "${localWorkspaceFolder}"
+        // "GIT_PROVIDER": "gitlab.com",
+        // "PROJECT_SLUG": "org/project",
+        // ** Sensitive info. Don't do this. **
+        // "GIT_USERNAME": "${localEnv:GIT_USERNAME}",
+        // "GIT_PASSWORD": "${localEnv:GIT_PASSWORD}"
+      }
+    },
+    "extensions": [
+      "Dart-Code.dart-code",
+      "Dart-Code.flutter",
+      "eamodio.gitlens"
+    ],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/developer/workspace,type=bind,consistency=delegated",
+    "workspaceFolder": "/home/developer/workspace"
+  }
+  

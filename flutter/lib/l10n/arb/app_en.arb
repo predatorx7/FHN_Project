@@ -1,0 +1,13 @@
+{
+    "@@locale": "en",
+    "appTitle": "Shop",
+    "@appTitle": {
+        "description": "Application title"
+    },
+    "languageName": "English",
+    "@languageName": {
+        "description": "Name of the language locale"
+    },
+    "languageId": "1",
+    "selectLanguage": "Select a Language"
+}

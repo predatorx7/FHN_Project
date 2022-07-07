@@ -1,0 +1,70 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Role {
+  id        Int            @id @default(autoincrement())
+  roleName  String         @map("role_name") @db.VarChar(200)
+  roleType  String         @unique @map("role_type") @db.VarChar(200)
+  roleLevel Int            @map("role_level")
+  isActive  Boolean        @default(true) @map("is_active")
+  users     UserAccounts[]
+
+  @@map("role")
+}
+
+enum PasswdHashType {
+  BCRYPT
+  ARGON2
+  NONE
+}
+
+model UserCredentials {
+  id           Int            @id @default(autoincrement())
+  passwordHash String?        @map("password_hash") @db.VarChar(400)
+  passwordSalt String?        @map("salt") @db.VarChar(400)
+  hashType     PasswdHashType @default(NONE) @map("hash_type")
+  user         UserAccounts   @relation(fields: [userName], references: [userName])
+  userName     String         @unique @map("management_user_id")
+
+  @@map("user_credentials")
+}
+
+model UserAccounts {
+  id               Int               @id @default(autoincrement())
+  email            String?           @unique @db.VarChar(200)
+  userName         String            @unique @map("user_name") @db.VarChar(200)
+  firstName        String?           @map("first_name") @db.VarChar(200)
+  lastName         String?           @map("last_name") @db.VarChar(200)
+  role             Role              @relation(fields: [roleId], references: [id])
+  roleId           Int               @map("role_id")
+  creator          UserAccounts?     @relation("management_user_creation", fields: [creatorId], references: [id])
+  creatorId        Int?              @map("creator_id")
+  createdAt        DateTime          @default(now()) @map("created_at")
+  createdUsers     UserAccounts[]    @relation("management_user_creation")
+  passwords        UserCredentials[]
+  createdKeyValues KeyValues[]       @relation("keyvalues_creation")
+  updatedKeyValues KeyValues[]       @relation("keyvalues_updation")
+
+  @@map("user_accounts")
+}
+
+model KeyValues {
+  id        Int           @id @default(autoincrement())
+  key       String
+  value     String?
+  isActive  Boolean       @default(true) @map("is_active")
+  creator   UserAccounts? @relation("keyvalues_creation", fields: [creatorId], references: [id])
+  creatorId Int?          @map("creator_id")
+  updator   UserAccounts? @relation("keyvalues_updation", fields: [updatorId], references: [id])
+  updatorId Int?          @map("updator_id")
+  createdAt DateTime      @default(now()) @map("created_at")
+  updatedAt DateTime      @updatedAt @map("updated_at")
+
+  @@map("key_values")
+}
