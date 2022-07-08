@@ -64,9 +64,7 @@ class BrowsingScreen extends ConsumerWidget {
                 if (valueAsync is AsyncError)
                   SliverErrorPlaceholder(
                     error: (valueAsync as AsyncError).error,
-                    onRetryPress: () {
-                      ref.refresh(itemsPaginationControllerProvider);
-                    },
+                    onRetryPress: onRetry,
                   ),
               ],
             );
@@ -90,8 +88,6 @@ class SliverItemsGrid extends StatelessWidget {
     return SliverGrid(
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 200,
-        mainAxisSpacing: 8,
-        crossAxisSpacing: 8,
         childAspectRatio: 1,
       ),
       delegate: SliverChildBuilderDelegate(

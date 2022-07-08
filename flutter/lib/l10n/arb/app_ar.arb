@@ -3,5 +3,14 @@
     "appTitle": "Shop",
     "languageName": "Arabic",
     "languageId": "2",
-    "selectLanguage": "Select a Language"
+    "selectLanguage": "Select a Language",
+    "termsConditions": "Terms & Conditions",
+    "privacyPolicy": "Privacy Policy",
+    "appLanguage": "Application language",
+    "purchases": "Purchases",
+    "upcomingOrders": "Upcoming orders",
+    "purchaseHistory": "Purchase History",
+    "contactUs": "Contact Us",
+    "faq": "FAQ",
+    "logout": "Logout"
 }

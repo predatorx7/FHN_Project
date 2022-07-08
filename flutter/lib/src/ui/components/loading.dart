@@ -9,11 +9,14 @@ class SliverLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          MiniCircularProgressIndicator(),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            MiniCircularProgressIndicator(),
+          ],
+        ),
       ),
     );
   }

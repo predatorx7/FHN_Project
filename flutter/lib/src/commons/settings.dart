@@ -33,9 +33,9 @@ final mainAppSettings = AppSettings<AppData, DependencyObject>(
   identifier: SettingsFor.production,
   payload: AppData(
     AppApi(
-      Uri.https('api-wanastime.brij.tech', ''),
+      Uri.https('api.magnificsoftware.com', ''),
     ),
-    Uri.https('website-wanastime.brij.tech', '/'),
+    Uri.https('magnificsoftware.com', '/'),
   ),
 );
 

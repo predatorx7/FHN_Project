@@ -1,14 +1,8 @@
 {
-    "@@locale": "en",
+    "@@locale": "hi",
     "appTitle": "Shop",
-    "@appTitle": {
-        "description": "Application title"
-    },
-    "languageName": "English",
-    "@languageName": {
-        "description": "Name of the language locale"
-    },
-    "languageId": "1",
+    "languageName": "Hindi",
+    "languageId": "3",
     "selectLanguage": "Select a Language",
     "termsConditions": "Terms & Conditions",
     "privacyPolicy": "Privacy Policy",

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/src/ui/components/destination_tab_view.dart';
+
+import '../components/destination_tab_view.dart';
 import '../components/bottom_nav_bar.dart';
+
 import 'browsing.dart';
+import 'my_stuff.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -31,9 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final tabs = [
       const BrowsingScreen(),
-      Container(
-        color: Colors.blue,
-      ),
+      const MyStuffScreen(),
     ];
 
     const options = <BottomNavigationBarItem>[
