@@ -7,8 +7,8 @@ import 'package:shopping/src/utils/logging/logging.dart';
 
 import '../../../gen/assets.gen.dart';
 
-class ErrorPlaceholderSliver extends StatelessWidget {
-  const ErrorPlaceholderSliver({
+class SliverErrorPlaceholder extends StatelessWidget {
+  const SliverErrorPlaceholder({
     Key? key,
     this.error,
     this.onRetryPress,

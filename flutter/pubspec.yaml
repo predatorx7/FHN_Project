@@ -76,6 +76,7 @@ dependencies:
   system_info2: ^2.0.4
   fluentui_system_icons: ^1.1.174
   badges: ^2.0.3
+  transparent_image: ^2.0.0
 
 dev_dependencies:
   flutter_test:
