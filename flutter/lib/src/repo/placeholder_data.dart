@@ -26,17 +26,23 @@ class JsonPlaceholderDataRepository
     );
   }
 
-  Future<List<SamplePhoto>> getPhotos(int? page, int? limit) {
+  Future<List<SamplePhoto>> getPhotos(int? page, int? limit) async {
     assert(
       (page != null) == (limit != null),
       'page and limit must be both null or both not null',
     );
 
-    logs('getPhotos').info('Requesting data with page: $page, limit: $limit');
+    final log = logs('getPhotos');
 
-    return service.getPhotos(
-      page,
+    log.info('Requesting data with page: $page, limit: $limit');
+
+    final data = await service.getPhotos(
+      page != null && limit != null ? page * limit : null,
       limit,
     );
+
+    log.info('Received data: ${data.map((e) => e.id).join(", ")}');
+
+    return data;
   }
 }

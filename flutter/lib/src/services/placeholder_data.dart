@@ -11,7 +11,7 @@ abstract class JsonPlaceholderDataClient {
 
   @GET("/photos")
   Future<List<SamplePhoto>> getPhotos(
-    @Query('_start') int? page,
+    @Query('_start') int? start,
     @Query('_limit') int? limit,
   );
 }

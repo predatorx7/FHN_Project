@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:magnific_ui/magnific_ui.dart';
 import 'package:shopping/src/data/data.dart';
 import 'package:shopping/src/di/json.dart';
+import 'package:shopping/src/di/shopping.dart';
 import 'package:shopping/src/ui/components/error.dart';
 import 'package:transparent_image/transparent_image.dart';
 
@@ -87,7 +88,7 @@ class SliverItemsGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverGrid(
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 200,
+        maxCrossAxisExtent: 180,
         childAspectRatio: 1,
       ),
       delegate: SliverChildBuilderDelegate(
@@ -102,7 +103,7 @@ class SliverItemsGrid extends StatelessWidget {
   }
 }
 
-class ItemTile extends StatelessWidget {
+class ItemTile extends ConsumerWidget {
   const ItemTile({
     Key? key,
     required this.item,
@@ -111,11 +112,66 @@ class ItemTile extends StatelessWidget {
   final SamplePhoto item;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return GridTile(
-      child: FadeInImage.memoryNetwork(
-        placeholder: kTransparentImage,
-        image: item.thumbnailUrl ?? item.url ?? '',
+      child: Stack(
+        children: [
+          Align(
+            alignment: Alignment.center,
+            child: FadeInImage.memoryNetwork(
+              placeholder: kTransparentImage,
+              image: item.thumbnailUrl ?? item.url ?? '',
+              fit: BoxFit.fill,
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: AddToCartIconButton(
+              item: item,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class AddToCartIconButton extends ConsumerWidget {
+  const AddToCartIconButton({
+    Key? key,
+    required this.item,
+  }) : super(key: key);
+
+  final SamplePhoto item;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isItemInCart = ref.watch(isItemInCartProviderFamily(item));
+
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: IconButton(
+        onPressed: () {
+          final ctrl = ref.read(
+            shoppingCartControllerProvider.notifier,
+          );
+          if (isItemInCart) {
+            ctrl - item;
+          } else {
+            ctrl + item;
+          }
+        },
+        icon: PhysicalModel(
+          color: Colors.white38,
+          shape: BoxShape.circle,
+          child: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: isItemInCart
+                ? const Icon(Icons.shopping_cart_rounded)
+                : const Icon(Icons.add_shopping_cart_rounded),
+          ),
+        ),
+        iconSize: 18,
       ),
     );
   }

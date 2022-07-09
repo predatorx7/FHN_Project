@@ -1,9 +1,11 @@
 import 'package:app_boot/app_boot.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:magnific_ui/components/components.dart';
+import 'package:magnific_ui/magnific_ui.dart';
+import 'package:shopping/gen/assets.gen.dart';
 import 'package:shopping/l10n/l10n.dart';
 import 'package:shopping/src/commons/settings.dart';
+import 'package:shopping/src/di/user.dart';
 
 import '../../di/package_info.dart';
 import '../components/lang.dart';
@@ -19,6 +21,7 @@ class MyStuffScreen extends StatelessWidget {
 
     return ListView(
       children: [
+        const ProfileCard(),
         SettingsSection(
           children: [
             OptionSection(
@@ -51,10 +54,6 @@ class MyStuffScreen extends StatelessWidget {
               title: Text(context.l10n.purchases),
               label: context.l10n.purchases,
             ),
-          ],
-        ),
-        SettingsSection(
-          children: [
             OptionSection(
               options: (context) {
                 return [
@@ -90,6 +89,7 @@ class MyStuffScreen extends StatelessWidget {
               },
               title: const Text('Legal'),
               label: 'Legal',
+              keepBorder: false,
             ),
           ],
         ),
@@ -106,6 +106,77 @@ class MyStuffScreen extends StatelessWidget {
         ),
         const AppAndDeviceInformationTile(),
       ],
+    );
+  }
+}
+
+class ProfileCard extends ConsumerWidget {
+  const ProfileCard({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final textTheme = Theme.of(context).textTheme;
+    final userName = ref.watch(userNameProvider) ?? 'User';
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20.0,
+      ),
+      child: InkWell(
+        onTap: () {
+          //
+        },
+        borderRadius: const BorderRadius.all(Radius.circular(10)),
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Hi, $userName!',
+                      textAlign: TextAlign.start,
+                      style: textTheme.titleLarge,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          'EDIT PROFILE',
+                          textAlign: TextAlign.start,
+                          style: textTheme.caption,
+                        ),
+                        const Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          size: 12,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    ConstrainedBox(
+                      constraints: BoxConstraints.tight(const Size.square(75)),
+                      child: ImageIcon2(
+                        AssetImage(Assets.icons.user.path),
+                        ignoreIconColor: true,
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

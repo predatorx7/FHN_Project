@@ -16,10 +16,10 @@ class _JsonPlaceholderDataClient implements JsonPlaceholderDataClient {
   String? baseUrl;
 
   @override
-  Future<List<SamplePhoto>> getPhotos(page, limit) async {
+  Future<List<SamplePhoto>> getPhotos(start, limit) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'_start': page,
+      r'_start': start,
       r'_limit': limit
     };
     queryParameters.removeWhere((k, v) => v == null);
