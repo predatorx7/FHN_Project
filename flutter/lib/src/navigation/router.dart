@@ -1,6 +1,7 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping/src/ui/screens/checkout.dart';
 import 'package:shopping/src/ui/screens/home.dart';
 
 import '../config/build_options.dart';
@@ -51,6 +52,13 @@ final routerProviderRef = Provider(
             return const HomeScreen();
           },
         ),
+        GoRoute(
+          name: CheckoutScreen.routeName,
+          path: CheckoutScreen.routeName,
+          builder: (context, s) {
+            return const CheckoutScreen();
+          },
+        )
       ],
     );
   },

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:logging_manager_flutter/logging_manager_flutter.dart';
 
-const String appLoggerName = 'wanasa';
+const String appLoggerName = 'shopping';
 
 Logging logging = Logging(appLoggerName);
 

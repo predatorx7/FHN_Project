@@ -45,4 +45,10 @@ class JsonPlaceholderDataRepository
 
     return data;
   }
+
+  Future<Iterable<SampleItem>> getShoppingItems(int? page, int? limit) async {
+    final result = await getPhotos(page, limit);
+
+    return result.map((e) => SampleItem.fromPhoto(246.0, e));
+  }
 }

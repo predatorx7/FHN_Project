@@ -17,6 +17,7 @@ class AppStyles {
       systemOverlayStyle: SystemUiOverlayStyle.dark.copyWith(
         statusBarColor: Colors.transparent,
       ),
+      centerTitle: true,
       elevation: 0,
     ),
     primaryColor: colorScheme.primary,

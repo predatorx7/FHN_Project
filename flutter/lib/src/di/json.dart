@@ -10,10 +10,10 @@ final jsonPlaceholderRepository = Provider((ref) {
 });
 
 final itemsPaginationControllerProvider = StateNotifierProvider<
-    PaginatedDataController<SamplePhoto>, PaginationData<SamplePhoto>>((ref) {
+    PaginatedDataController<SampleItem>, PaginationData<SampleItem>>((ref) {
   final repo = ref.watch(jsonPlaceholderRepository);
 
-  return PaginatedDataController<SamplePhoto>(
-    fetch: repo.getPhotos,
+  return PaginatedDataController<SampleItem>(
+    fetch: repo.getShoppingItems,
   );
 });
