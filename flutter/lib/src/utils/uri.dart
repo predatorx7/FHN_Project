@@ -7,11 +7,10 @@ String encodeQueryParameter(Map<String, String> queryParameters) {
   var separator = "";
 
   void writeParameter(String key, String value) {
-    assert(key != null);
     result.write(separator);
     separator = "&";
     result.write(Uri.encodeQueryComponent(key));
-    if (value != null && value.isNotEmpty) {
+    if (value.isNotEmpty) {
       result.write("=");
       result.write(Uri.encodeQueryComponent(value));
     }

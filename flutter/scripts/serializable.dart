@@ -8,6 +8,7 @@ void main() {
     x[classKeyName],
     x,
   );
+  // ignore: avoid_print
   print(y);
 }
 

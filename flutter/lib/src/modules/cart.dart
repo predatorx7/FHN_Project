@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:shopping/src/data/data.dart';
 import 'package:shopping/src/utils/logging/logging.dart';

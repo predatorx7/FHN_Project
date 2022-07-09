@@ -12,7 +12,6 @@ import 'package:logging_manager_flutter/logging_manager_flutter.dart';
 import 'package:magnific_core/magnific_core.dart';
 
 import '../utils/logging/logging.dart';
-import '../utils/sql/disposable.dart';
 import '../utils/sql/initialize.dart';
 import 'under_construction.dart';
 
@@ -23,12 +22,13 @@ Future<void> _addFontLicense() async {
   });
 }
 
-Disposable? _platformDatabaseDisposable;
-
 List<Future> onStarted() {
-  _platformDatabaseDisposable = initializePlatformDatabase();
+  initializePlatformDatabase();
 
-  cachedNetworkImageProviver = (it) => CachedNetworkImageProvider(it);
+  cachedNetworkImageProviver = (it) {
+    if (kIsWeb) return NetworkImage(it);
+    return CachedNetworkImageProvider(it);
+  };
   return <Future>[
     _addFontLicense(),
   ];

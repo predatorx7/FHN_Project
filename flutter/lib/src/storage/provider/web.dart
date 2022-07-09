@@ -5,7 +5,6 @@ import 'dart:html';
 import 'package:drift/drift.dart';
 import 'package:drift/remote.dart';
 import 'package:flutter/foundation.dart';
-import 'package:magnific_core/magnific_core.dart';
 import 'package:shopping/src/utils/logging/logging.dart';
 
 import '../account/db.dart';
