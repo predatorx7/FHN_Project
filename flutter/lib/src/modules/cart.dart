@@ -2,6 +2,8 @@ import 'package:riverpod/riverpod.dart';
 import 'package:shopping/src/data/data.dart';
 import 'package:shopping/src/utils/logging/logging.dart';
 
+// Keeping the state as an [Iterable] instead of a [List] to disallow consumers accessing .add, and other methods for
+// modifying the list because the state must be immutable and the list is unmmodifiable (modifications will throw).
 class ShoppingCartController extends StateNotifier<Iterable<SampleItem>> {
   ShoppingCartController() : super(const []);
 
