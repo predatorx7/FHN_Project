@@ -8,12 +8,16 @@ class ShoppingCartController extends StateNotifier<Iterable<SampleItem>> {
   final logger = logging('ShoppingCartController');
 
   void operator +(SampleItem other) {
+    validateItem(other);
+
     final values = state;
 
     state = List.unmodifiable([...values, other]);
   }
 
   void removeLastOf(SampleItem item) {
+    validateItem(item);
+
     final newValues = <SampleItem>[];
     final values = state;
     bool hasRemovedOnce = false;
@@ -31,10 +35,16 @@ class ShoppingCartController extends StateNotifier<Iterable<SampleItem>> {
   }
 
   void operator -(SampleItem other) {
+    validateItem(other);
     // Creating a new list without the item matching [other]'s id because state is unmodifiable.
 
-    final newValues = <SampleItem>[];
     final values = state;
+    assert(
+      values.isNotEmpty,
+      'Attempted to remove items when cart was already empty',
+    );
+
+    final newValues = <SampleItem>[];
     for (var i = 0; i < values.length; i++) {
       final it = values.elementAt(i);
       if (it.id != other.id) {
@@ -43,5 +53,15 @@ class ShoppingCartController extends StateNotifier<Iterable<SampleItem>> {
     }
 
     state = List.unmodifiable(newValues);
+  }
+
+  void validateItem(SampleItem it) {
+    if (it.id == null) {
+      throw ArgumentError.value(
+        it,
+        'Attempted to use item with null id',
+        'id',
+      );
+    }
   }
 }
