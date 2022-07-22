@@ -18,6 +18,11 @@ void main() {
       });
     });
 
+    tearDown(() {
+      removeListener();
+      controller.dispose();
+    });
+
     test('addition of item in the cart', () {
       final a = getRandomSampleItem();
 
@@ -284,11 +289,6 @@ void main() {
       expect(oldState3, isNot(same(latestState)));
       expect(oldState3, isNot(same(oldState2)));
       expect(oldState3, isNot(same(oldState1)));
-    });
-
-    tearDown(() {
-      removeListener();
-      controller.dispose();
     });
   });
 }
